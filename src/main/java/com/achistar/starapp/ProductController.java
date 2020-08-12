@@ -15,17 +15,17 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 
-	@RequestMapping("/Products")
+	@RequestMapping("/products")
 	public List<Product> getAllProducts() {
 		return productService.getAllProducts();
 	}
 
-	@RequestMapping("/Product/{id}")
+	@RequestMapping("/product/{id}")
 	public Product getProduct(@PathVariable Integer id) {
 		return productService.getProduct(id);
 	}
 
-	@RequestMapping(method = RequestMethod.POST, value = "/Product")
+	@RequestMapping(method = RequestMethod.POST, value = "/product")
 	public String addProduct(@RequestBody Product Product) {
 		Product savedProduct = productService.addProduct(Product);
 		return savedProduct.toString();
