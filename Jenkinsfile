@@ -21,7 +21,7 @@ node {
    stage('Run Container on Server') {
        def dockerRun = 'docker run -p 8081:8081 -d --name starapp abhik87/starapp:1.0.0'
        sshagent(['app-server']) {
-          sh "ssh -o StrictHostKeyChecking=no ec2-user@13.234.18.5 ${dockerRun}"
+          sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.8.249 ${dockerRun}"
        }
    }
 }
